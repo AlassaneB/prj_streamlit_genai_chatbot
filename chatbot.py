@@ -22,7 +22,8 @@ if "chat_history" not in st.session_state:
 
 # show chat history
 for message in st.session_state.chat_history:
-    with st.chat_message(message["role"]):
+    with st.chat_message(message["role"],
+                         avatar="👀" if message["role"] == "user" else None):
         st.markdown(message["content"])
 
 # llm initiate
